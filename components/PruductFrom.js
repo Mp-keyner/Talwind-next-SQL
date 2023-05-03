@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { useRouter } from 'next/router'
 
 function PruductFrom() {
 
@@ -7,13 +8,15 @@ function PruductFrom() {
         name: "",
         description: "",
         price: 0,
-    })
+    });
+    const router = useRouter()
 
     const handleSubit = async e => {
         e.preventDefault()
         console.log('Creating Pruduct')
         const res = await axios.post('/api/products', products)
         console.log(res)
+        router.push('/')
     }
 
     const handleChange = ({ target: { name, value } }) => {

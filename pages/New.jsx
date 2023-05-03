@@ -1,10 +1,15 @@
+import PruductFrom from "../components/PruductFrom"
+import { Layouy } from "../components/Layouy"
+
+
 function NewPage() {
     return (
-        <div>
-            <h1>hello</h1>
-            <h2>como ta ?</h2>
-        </div>
+        <Layouy>
+        <PruductFrom/>
+      </Layouy>
     )
+    
+    
 }
-
+ 
 export default NewPage

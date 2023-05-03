@@ -1,19 +1,25 @@
 import axios from "axios"
-import PruductFrom from "../components/PruductFrom"
+import { Layouy } from "../components/Layouy";
+import Link from "next/link"
+
 
 const Homepage = ({ products }) => {
   return (
-    <div>
-      <PruductFrom />
-
+    <Layouy>
+      <h1>hello</h1>
       {products.map(product => (
-        <div key={product.id}>
+       <link href={ `/products/${product.id}` } key={product.id}>
+        <a>
+        <div className="border border-gray-200 shadow-md p-2 m-2">
           <h1>{product.name}</h1>
           <p>{product.price}</p>
           <p>{product.description}</p>
         </div>
+        </a>
+       </link>
       ))}
-    </div>
+
+</Layouy>
   )
 }
 
