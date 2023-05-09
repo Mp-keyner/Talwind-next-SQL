@@ -8,18 +8,16 @@ const Homepage = ({ products }) => {
     <Layouy>
       <h1>hello</h1>
       {products.map(product => (
-       <link href={ `/products/${product.id}` } key={product.id}>
-        <a>
-        <div className="border border-gray-200 shadow-md p-2 m-2">
-          <h1>{product.name}</h1>
-          <p>{product.price}</p>
-          <p>{product.description}</p>
-        </div>
-        </a>
-       </link>
+        <Link href={`/products/${product.id}`} key={product.id}>
+          <div className="border border-gray-200 shadow-md p-2 m-2">
+            <h1>{product.name}</h1>
+            <p>{product.price}</p>
+            <p>{product.description}</p>
+          </div>
+        </Link>
       ))}
 
-</Layouy>
+    </Layouy>
   )
 }
 
