@@ -2,6 +2,7 @@ import { Layouy } from '@/components/Layouy'
 import axios from 'axios'
 import React from 'react'
 import { useRouter } from "next/router";
+import { toast } from 'react-toastify';
 
 const ProductPage = ({ products }) => {
 
@@ -10,8 +11,12 @@ const ProductPage = ({ products }) => {
   console.log({ products })
 
   const handleDelete = async (id) => {
-    await axios.delete('/api/products/' + id)
-    router.push('/')
+    try {
+      await axios.delete('/api/products/' + id)
+      router.push('/')
+    } catch (error) {
+      toast.error(error.message)
+    }
   }
 
   return (
@@ -28,7 +33,7 @@ const ProductPage = ({ products }) => {
 
         <button className='btn bg-green-600 p-1 rounded shadowx-md hover:bg-green-400'
 
-          onClick={() => router.push('/products/update/' + products.id)}>
+          onClick={() => router.push('/products/Update/' + products.id)}>
           Update
         </button>
       </div>

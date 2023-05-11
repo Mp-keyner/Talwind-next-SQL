@@ -12,19 +12,27 @@ export default async function handler(req, res) {
 }
 
 const getProduct = async (req, res) => {
-    const [resultado] = await poool.query('SELECT * FROM products')
-    return res.status(200).json(resultado)
+    try {
+        const [resultado] = await poool.query('SELECT * FROM products')
+        return res.status(200).json(resultado)
+    } catch (error) {
+        return res.status(500).json({ error: error.response.data.error });
+    }
 }
 
 
 const saveProduct = async (req, res) => {
     const { name, description, price } = req.body;
 
-    const [result] = await poool.query('INSERT INTO products SET ?', {
-        name,
-        description,
-        price
-    });
-    console.log(result)
-    return res.status(200).json({ name, description, price, id: result.insertId });
+    try {
+        const [result] = await poool.query('INSERT INTO products SET ?', {
+            name,
+            description,
+            price
+        });
+        console.log(result)
+        return res.status(200).json({ name, description, price, id: result.insertId });
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
 }
