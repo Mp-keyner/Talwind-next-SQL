@@ -21,17 +21,19 @@ const ProductPage = ({ products }) => {
 
   return (
     <Layouy>
-      <div className='grid gap-3'>
-        <h1>{products.name}</h1>
-        <p>{products.description}</p>
-        <h2>{products.price}</h2>
+      <div className='h-100 w-30 flex flex-col items-center justify-start rounded shadow-2xl sm:w-30 sm:justify-center sm:flex-row sm:h-60'>
+        <div className='mx-10 p-5 rounded shadowx-md'>
+          <h1 className='text-lg font-semibold my-7 '>{products.name}</h1>
+          <p>{products.description}</p>
+          <h2 className='text-lg font-semibold'>{products.price}</h2>
+        </div>
 
-        <button className='btn bg-red-600 p-1 rounded shadowx-md hover:bg-red-400'
+        <button className='btn bg-red-600 p-1 w-20 h-10 m-3 rounded shadowx-md hover:bg-red-500'
           onClick={() => handleDelete(products.id)}>
           delete
         </button>
 
-        <button className='btn bg-green-600 p-1 rounded shadowx-md hover:bg-green-400'
+        <button className='btn bg-green-600 p-1 w-20 h-10 m-3 rounded shadowx-md hover:bg-green-500'
 
           onClick={() => router.push('/products/Update/' + products.id)}>
           Update

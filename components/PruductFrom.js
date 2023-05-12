@@ -53,44 +53,48 @@ function PruductFrom() {
         }
     }, [router.query.id])
     return (
-        <div className='w-full max-w-xs'>
-            <form onSubmit={handleSubit} className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 '>
+        <div className='flex justify-center'>
+            <div className='w-full max-w-xs'>
+                <form onSubmit={handleSubit} className='bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4'>
 
-                <label htmlFor='name'>Name:</label>
+                    <label htmlFor='name' className='block text-gray-700 font-bold mb-2'>Name:</label>
+                    <input
+                        type='text'
+                        name='name'
+                        onChange={handleChange}
+                        className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+                        value={products.name}
+                    />
 
-                <input
-                    type='text'
-                    name='name'
-                    onChange={handleChange}
-                    className='shadow border rounded py-2 px-3 text-gray-700'
-                    value={products.name}
-                />
-                <label htmlFor='price'>Price:</label>
+                    <label htmlFor='price' className='block text-gray-700 font-bold mt-4 mb-2'>Price:</label>
+                    <input
+                        type='text'
+                        name='price'
+                        onChange={handleChange}
+                        className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+                        value={products.price}
+                    />
 
-                <input
-                    type='text'
-                    name='price'
-                    onChange={handleChange}
-                    className='shadow border rounded py-2 px-3 text-gray-700'
-                    value={products.price}
-                />
+                    <label htmlFor='description' className='block text-gray-700 font-bold mt-4 mb-2'>Description:</label>
+                    <textarea
+                        name='description'
+                        rows='2'
+                        onChange={handleChange}
+                        className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+                        value={products.description}
+                    ></textarea>
 
-                <label htmlFor='description'>Description:</label>
+                    <button
+                        className='bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 mt-8 rounded shadow-md focus:outline-none focus:shadow-outline'
+                    >
+                        {router.query.id ? 'UpDate Product' : 'Save Product'}
+                    </button>
 
-                <textarea
-                    name='description'
-                    rows="2"
-                    onChange={handleChange}
-                    className='shadow border rounded py-2 px-3 text-gray-700'
-                    value={products.description}
-                ></textarea>
-                <button className='bg-green-500 p-3 rounded  hover:bg-green-700 shadow-md'>
-                    {
-                        router.query.id ? 'UpDate Product' : 'Save Product'
-                    }
-                </button>
-            </form>
+                </form>
+            </div>
         </div>
+
+
     )
 }
 
