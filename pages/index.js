@@ -15,8 +15,8 @@ const Homepage = ({ products }) => {
         {products.map(product => (
           <Link href={`/products/${product.id}`} key={product.id}>
             <div className="bg-gray-200 p-4 max-w-50% mx-auto rounded-md shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
-              <h1 className="text-lg font-semibold">{product.name}</h1>
-              <p>{product.price}</p>
+              <h1 className="text-lg font-semibold">💳 {product.name}</h1>
+              <p className="text-lg font-semibold">💰 $.{product.price}</p>
               <p>{product.description}</p>
             </div>
           </Link>
