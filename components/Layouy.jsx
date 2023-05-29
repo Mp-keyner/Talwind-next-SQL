@@ -1,18 +1,20 @@
 import React, { children } from "react";
 import { ToastContainer } from "react-toastify";
 import Navart from "./Navart";
+import Footer from "./Footer";
 
 export const Layouy = ({ children }) => {
   return (
     <>
       <Navart />
-      <div className=" h-100 p-1 sm:p-5 bg-gray-100 ">
-        <div className="container mx-auto ">
-          <div className="px-5 py-5 sm:px-20  rounded" >
+      <div className=" p-1  bg-gray-100 lx:h-100 ">
+        <div className="">
+          <div className="p-5  rounded" >
             {children}
           </div>
         </div>
       </div>
+      <Footer />
       <ToastContainer />
     </>
   );

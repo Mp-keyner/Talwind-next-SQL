@@ -21,7 +21,7 @@ const ProductPage = ({ products }) => {
 
   return (
     <Layouy>
-      <div className='h-200 w-30 flex flex-col items-center justify-start rounded shadow-2xl sm:w-30 sm:justify-center sm:flex-row sm:min-h-200'>
+      <div className='min-h-[30pc] w-30 flex flex-col items-center justify-start rounded shadow-2xl sm:w-30 sm:justify-center sm:flex-row sm:min-h-200'>
         <div className='mx-10 p-5 rounded shadowx-md'>
           <h1 className='text-lg font-semibold my-7 '>💳 {products.name}</h1>
           <p>{products.description}</p>

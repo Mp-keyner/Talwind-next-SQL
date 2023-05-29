@@ -22,6 +22,15 @@ module.exports = {
         'serif': ['Merriweather', 'Georgia', 'Cambria', 'Times New Roman', 'serif'],
         'mono': ['Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
       },
+      fontSize: {
+        'xs': '12px',
+        'sm': '14px',
+        'base': '16px',
+        'lg': '18px',
+        'xl': '20px',
+        '2xl': '24px',
+        // Agrega más tamaños de fuente según tus necesidades
+      },
     },
   },
   plugins: [],

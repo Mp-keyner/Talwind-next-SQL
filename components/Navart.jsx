@@ -42,9 +42,9 @@ const Navart = () => {
                     <Link href={'/'} className="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4 cursor-pointer hover:shadow-lg">
                         Home
                     </Link>
-                    <a className="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4 cursor-pointer hover:shadow-lg">
+                    <Link href={'/About'} className="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4 cursor-pointer hover:shadow-lg">
                         About
-                    </a>
+                    </Link>
                     <Link href={'/New'} className="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white hover:shadow-lg">
                         New Product
                     </Link>
